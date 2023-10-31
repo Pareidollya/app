@@ -34,34 +34,41 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 20),
             TextField(
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
-                labelText: "Username",
+                filled: true, // Adiciona preenchimento ao campo
+                fillColor: Color.fromARGB(255, 58, 58,
+                    58), // Define a cor de preenchimento como preta
+                labelText: "Usuário",
                 labelStyle: TextStyle(color: Colors.white),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                  borderRadius: BorderRadius.circular(4.0),
+                  borderSide: BorderSide.none, // Remove a borda
+                  borderRadius: BorderRadius.circular(12.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blue, width: 2.0),
-                  borderRadius: BorderRadius.circular(4.0),
+                  borderSide: BorderSide(color: Colors.yellow, width: 2.0),
+                  borderRadius: BorderRadius.circular(12.0),
                 ),
               ),
             ),
             SizedBox(height: 20),
             TextField(
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
-                labelText: "Password",
+                filled: true, // Adiciona preenchimento ao campo
+                fillColor: Color.fromARGB(255, 58, 58,
+                    58), // Define a cor de preenchimento como preta
+                labelText: "Senha",
                 labelStyle: TextStyle(color: Colors.white),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                  borderRadius: BorderRadius.circular(4.0),
+                  borderSide: BorderSide.none, // Remove a borda
+                  borderRadius: BorderRadius.circular(12.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blue, width: 2.0),
-                  borderRadius: BorderRadius.circular(4.0),
+                  borderSide: BorderSide(color: Colors.yellow, width: 2.0),
+                  borderRadius: BorderRadius.circular(12.0),
                 ),
               ),
-              obscureText: true,
             ),
             SizedBox(height: 30),
             ElevatedButton(
