@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Just do It",
               style: TextStyle(
                 color: Colors.yellow,
@@ -24,9 +24,9 @@ class _LoginPageState extends State<LoginPage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 100),
-            Align(
-              alignment: Alignment.centerLeft, // Alinha o texto à esquerda
+            const SizedBox(height: 100),
+            const Align(
+              alignment: Alignment.centerLeft,
               child: Text(
                 "Login",
                 style: TextStyle(
@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             InputLarge(labelText: "Usuário"),
             // TextField(
             //   cursorColor: Colors.yellow,
@@ -44,13 +44,13 @@ class _LoginPageState extends State<LoginPage> {
             //   decoration: InputDecoration(
             //     contentPadding:
             //         EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
-            //     filled: true, // Adiciona preenchimento ao campo
+            //     filled: true,
             //     fillColor: Color.fromARGB(255, 58, 58,
-            //         58), // Define a cor de preenchimento como preta
+            //         58),
             //     labelText: "Usuário",
             //     labelStyle: TextStyle(color: Colors.white),
             //     enabledBorder: OutlineInputBorder(
-            //       borderSide: BorderSide.none, // Remove a borda
+            //       borderSide: BorderSide.none,
             //       borderRadius: BorderRadius.circular(12.0),
             //     ),
             //     focusedBorder: OutlineInputBorder(
@@ -59,23 +59,24 @@ class _LoginPageState extends State<LoginPage> {
             //     ),
             //   ),
             // ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             InputLarge(
               labelText: "Senha",
               obscureText: true,
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 primary: Colors.yellow,
                 onPrimary: Colors.black,
-                padding: EdgeInsets.symmetric(horizontal: 135, vertical: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 135, vertical: 20),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),
                 ),
               ),
-              child: Text(
+              child: const Text(
                 "Entrar",
                 style: TextStyle(
                   color: Colors.black87,
@@ -84,21 +85,19 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             TextButton(
               onPressed: () {},
               child: RichText(
-                text: TextSpan(
+                text: const TextSpan(
                   text: 'Não possui cadastro? ',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 21), // Ajuste o fontSize conforme necessário
+                  style: TextStyle(color: Colors.white, fontSize: 21),
                   children: <TextSpan>[
                     TextSpan(
                       text: 'Registre-se',
                       style: TextStyle(
                         color: Colors.yellow,
-                        fontSize: 21, // Ajuste o fontSize conforme necessário
+                        fontSize: 21,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
