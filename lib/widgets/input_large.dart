@@ -55,19 +55,22 @@ class _InputLargeState extends State<InputLarge> {
       keyboardType: widget.keyboardType,
       cursorColor: Colors.yellow,
       obscureText: widget.obscureText ? _obscureText : false,
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
         filled: true,
-        fillColor: Color.fromARGB(255, 58, 58, 58),
+        fillColor: const Color.fromARGB(255, 58, 58, 58),
         labelText: widget.labelText,
-        labelStyle: TextStyle(color: Colors.white),
+        labelStyle: TextStyle(
+          color: _focusNode.hasFocus ? Colors.yellow : Colors.white,
+        ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.circular(12.0),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.yellow, width: 2.0),
+          borderSide: const BorderSide(color: Colors.yellow, width: 2.0),
           borderRadius: BorderRadius.circular(12.0),
         ),
         suffixIcon: widget.obscureText && _focusNode.hasFocus
