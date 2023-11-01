@@ -60,7 +60,10 @@ class _LoginPageState extends State<LoginPage> {
             //   ),
             // ),
             SizedBox(height: 20),
-            InputLarge(labelText: "Senha"),
+            InputLarge(
+              labelText: "Senha",
+              obscureText: true,
+            ),
             SizedBox(height: 50),
             ElevatedButton(
               onPressed: () {},

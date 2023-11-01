@@ -5,22 +5,22 @@ class InputLarge extends StatelessWidget {
   final TextEditingController? controller;
   final Function(String)? onChanged;
   final TextInputType? keyboardType;
-  final int? maxLines;
+  final bool password;
 
   InputLarge({
     required this.labelText,
     this.controller,
     this.onChanged,
     this.keyboardType,
-    this.maxLines,
+    this.password = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      obscureText: password,
       controller: controller,
       onChanged: onChanged,
-      maxLines: maxLines,
       keyboardType: keyboardType,
       cursorColor: Colors.yellow,
       style: TextStyle(color: Colors.white),
