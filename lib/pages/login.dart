@@ -7,6 +7,23 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final TextEditingController _userController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  void _handleLogin() {
+    //enquanto nao tiver firebase
+    if (_userController.text == "123" && _passwordController.text == "123") {
+      Navigator.pushNamed(context, '/home');
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Usuário ou senha inválidos!'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,36 +54,16 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(height: 30),
-            InputLarge(labelText: "Usuário"),
-            // TextField(
-            //   cursorColor: Colors.yellow,
-            //   style: TextStyle(color: Colors.white),
-            //   decoration: InputDecoration(
-            //     contentPadding:
-            //         EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
-            //     filled: true,
-            //     fillColor: Color.fromARGB(255, 58, 58,
-            //         58),
-            //     labelText: "Usuário",
-            //     labelStyle: TextStyle(color: Colors.white),
-            //     enabledBorder: OutlineInputBorder(
-            //       borderSide: BorderSide.none,
-            //       borderRadius: BorderRadius.circular(12.0),
-            //     ),
-            //     focusedBorder: OutlineInputBorder(
-            //       borderSide: BorderSide(color: Colors.yellow, width: 2.0),
-            //       borderRadius: BorderRadius.circular(12.0),
-            //     ),
-            //   ),
-            // ),
+            InputLarge(labelText: "Usuário", controller: _userController),
             const SizedBox(height: 20),
             InputLarge(
               labelText: "Senha",
               obscureText: true,
+              controller: _passwordController,
             ),
             const SizedBox(height: 50),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: _handleLogin,
               style: ElevatedButton.styleFrom(
                 primary: Colors.yellow,
                 onPrimary: Colors.black,
@@ -87,7 +84,9 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const SizedBox(height: 40),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/register');
+              },
               child: RichText(
                 text: const TextSpan(
                   text: 'Não possui cadastro? ',
@@ -109,5 +108,12 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _userController.dispose();
+    _passwordController.dispose();
+    super.dispose();
   }
 }
